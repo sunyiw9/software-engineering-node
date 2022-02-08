@@ -3,6 +3,7 @@ import User from "../models/User";
 import {Express, Request, Response} from "express";
 import UserControllerI from "../interfaces/UserController";
 
+//Code reference: https://github.com/jannunzi/software-engineering-node/tree/a2
 export default class UserController implements UserControllerI {
     private static userDao: UserDao = UserDao.getInstance();
     private static userController: UserController | null = null;
