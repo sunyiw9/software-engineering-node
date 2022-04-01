@@ -22,6 +22,8 @@ import mongoose from "mongoose";
 import GroupController from "./controllers/GroupController";
 const cors = require("cors");
 const session = require("express-session");
+const dotenv = require("dotenv");
+dotenv.config();
 
 // build the connection string
 const PROTOCOL = "mongodb+srv";
@@ -32,7 +34,7 @@ const DB_NAME = "myFirstDatabase";
 const DB_QUERY = "retryWrites=true&w=majority";
 // const connectionString = `${PROTOCOL}://${DB_USERNAME}:${DB_PASSWORD}@${HOST}/${DB_NAME}?${DB_QUERY}`;// connect to the database
 // const connectionString = `${PROTOCOL}://${DB_USERNAME}:${DB_PASSWORD}@${HOST}/${DB_NAME}?${DB_QUERY}`;// connect to the database
-const connectionString = `mongodb+srv://usernamea4:passworda4@cluster0.gmf0r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const connectionString = `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@cluster0.gmf0r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 mongoose.connect(connectionString);
 
 const app = express();
